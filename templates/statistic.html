@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Statistic</title>
+
+  <!-- Bootstrap core CSS -->
+  <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href={{ url_for('static', filename='bootstrap.min.css')}}/>
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <!-- <link href="css/agency.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href={{ url_for('static', filename='agency.min.css')}}/>
+
+  <style>
+      body {background-image:url("https://1nt6ky2d0kpj2lrju93ucfag-wpengine.netdna-ssl.com/wp-content/uploads/AdobeStock_208568531.jpeg"); 
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover
+      }
+      img, h1, form {text-align: center}
+      .center {display: block ; margin-left: auto; margin-right: auto; width: 40%}
+  </style>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+			<div class="container">
+				<a class="navbar-brand js-scroll-trigger" href="http://localhost:1911">Get Money</a>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					Menu
+					<i class="fas fa-bars"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav text-uppercase ml-auto">
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="http://localhost:1911/statistic">Statistic</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="http://localhost:1911/contact">Contact</a>
+						</li>
+						<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" href="http://localhost:1911">Sign Out</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        <div class="intro-heading text-uppercase"><h1>Statistics of Clients</h1></div>
+				<div class="container">
+						<div class="row">
+							<div class="col-sm-6">Group by Job</div>
+							<div class="col-sm-6">Group by Sex</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">	<img src="http://localhost:1911/file/graph/job.png" alt="job"></div>
+							<div class="col-sm-6"><img src="http://localhost:1911/file/graph/sex.png" alt="sex"></div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-6">Group by Saving Accounts</div>
+							<div class="col-sm-6">Group by Checking account</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">	<img src="http://localhost:1911/file/graph/Saving Accounts.png" alt="save"></div>
+							<div class="col-sm-6"><img src="http://localhost:1911/file/graph/Checking account.png" alt="check"></div>
+						</div>
+
+						<div class="row">
+								<div class="col-sm-6">Group by Housing</div>
+								<div class="col-sm-6">Group by Purposes</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">	<img src="http://localhost:1911/file/graph/housing.png" alt="house"></div>
+								<div class="col-sm-6"><img src="http://localhost:1911/file/graph/purpose.png" alt="purpose"></div>
+							</div>
+
+						<div class="row">
+							<div class="col-sm-6">Group by Age with Good Risk</div>
+							<div class="col-sm-6">Group by Age with Bad Risk</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">	<img src="http://localhost:1911/file/graph/AgeGood.png" alt="agegood" align="right"></div>
+							<div class="col-sm-6"><img src="http://localhost:1911/file/graph/AgeBad.png" alt="agebad" align="left"></div>
+						</div>
+
+						<div class="row">
+								<div class="col-sm-6">Group by Duration with Good Risk</div>
+								<div class="col-sm-6">Group by Duration with Bad Risk</div>
+							</div>
+						<div class="row">
+							<div class="col-sm-6">	<img src="http://localhost:1911/file/graph/DurGood.png" alt="durgood" align="right"></div>
+							<div class="col-sm-6"><img src="http://localhost:1911/file/graph/Dur.png" alt="durbad" align="left"></div>
+						</div>
+
+						<div class="row">
+								<div class="col-sm-6">Group by Credit Amount with Good Risk</div>
+								<div class="col-sm-6">Group by Credit Amount with Bad Risk</div>
+							</div>
+						<div class="row">
+							<div class="col-sm-6">	<img src="http://localhost:1911/file/graph/caGood.png" alt="caGood" align="right"></div>
+							<div class="col-sm-6"><img src="http://localhost:1911/file/graph/caBad.png" alt="caBad" align="left"></div>
+						</div>
+
+						<div class="buttons">
+							<a class="button learn-more smoothscroll" href="http://localhost:1911">Login Page</a>
+						</div>
+					</div>
+			
+      </div>
+    </div>
+      
+
+
+    
+  </header>
+
+  
+
+  <!-- Bootstrap core JavaScript -->
+  <script type=text/javascript src="{{url_for('static', filename="jquery.min.js") }}"></script>
+  <script type=text/javascript src="{{url_for('static', filename="bootstrap.bundle.min.js") }}"></script>
+  
+  <!-- Plugin JavaScript -->
+  <script type=text/javascript src="{{url_for('static', filename="jquery.easing.min.js") }}"></script>
+  
+  <!-- Contact form JavaScript -->
+  <script type=text/javascript src="{{url_for('static', filename="jqBootstrapValidation.js") }}"></script>
+  <script type=text/javascript src="{{url_for('static', filename="contact_me.js") }}"></script>
+  
+  
+
+  <!-- Custom scripts for this template -->
+  
+  <script type=text/javascript src="{{url_for('static', filename="agency.min.js") }}"></script>
+
+
+</body>
+
+</html>

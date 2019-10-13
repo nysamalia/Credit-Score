@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Predict Potential Client</title>
+
+  <!-- Bootstrap core CSS -->
+  <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href={{ url_for('static', filename='bootstrap.min.css')}}/>
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <!-- <link href="css/agency.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href={{ url_for('static', filename='agency.min.css')}}/>
+
+  <style>
+      body {background-image:url("https://1nt6ky2d0kpj2lrju93ucfag-wpengine.netdna-ssl.com/wp-content/uploads/AdobeStock_208568531.jpeg"); 
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover
+      }
+      img, h1, form {text-align: center}
+      .center {display: block ; margin-left: auto; margin-right: auto; width: 40%}
+  </style>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+			<div class="container">
+				<a class="navbar-brand js-scroll-trigger" href="http://localhost:1911">Get Money</a>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					Menu
+					<i class="fas fa-bars"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav text-uppercase ml-auto">
+ 
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="http://localhost:1911/statistic">Statistic</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link js-scroll-trigger" href="http://localhost:1911/contact">Contact</a>
+						</li>
+						<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" href="http://localhost:1911">Sign Out</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+				<div class="intro-heading text-uppercase"><h1>Predict Potential Client Page</h1></div>
+				<form action="http://localhost:1911/predict" method="post">
+				<div class="row">
+						<div class="col">Age:
+							<input name="age" placeholder="" type="number" 
+									min="15" max="90" style="width:200px" required/></div>
+
+						<div class="col">Sex:
+								<select name="sex" style="width:200px" required="required">
+										<option></option>
+										<option value="0">Female</option>
+										<option value="1">Male </option>
+
+								</select></div>
+
+
+						<div class="col">Job:
+								<select name="job" style="width:200px" required>
+										<option></option>
+										<option value="0">unskilled and non-resident</option>
+										<option value="1">unskilled and resident</option>
+										<option value="2">skilled</option>
+										<option value="3">highly skilled</option>
+
+								</select></div>
+					</div><br><br>
+
+					<div class="row">
+							<div class="col">Housing:
+									<select name="housing" style="width:200px" required>
+											<option></option>
+											<option value="0">Free</option>
+											<option value="1">Own</option>
+											<option value="2">Rent</option>
+
+									</select></div>
+	
+							<div class="col">Credit Amount:
+									<input name="creditamount" placeholder="" type="number"
+											min="1" style="width:150px" required/></div>
+	
+	
+							<div class="col">Duration:
+									<input name="duration" placeholder="in months" type="number"
+											min="1" max="100" style="width:200px" required/></div>
+						</div><br><br>
+
+						<div class="row">
+								<div class="col">Checking Account:
+										<select name="checking" required>
+												<option></option>
+												<option value="0">little</option>
+												<option value="1">moderate</option>
+												<option value="2">no</option>
+												<option value="3">quite rich</option>
+												<option value="4">rich</option>
+
+										</select></div>
+		
+								<div class="col">Saving Account:
+										<select name="saving" required>
+												<option></option>
+												<option value="0">little</option>
+												<option value="1">moderate</option>
+												<option value="2">no</option>
+												<option value="3">quite rich</option>
+												<option value="4">rich</option>
+
+										</select></div>
+		
+		
+								<div class="col">Purpose:
+										<select name="purpose" required>
+												<option></option>
+												<option value="0">Business</option>
+												<option value="1">Car</option>
+												<option value="2">Domestic Appliances</option>
+												<option value="3">Education</option>
+												<option value="4">Furniture/Equipment</option>
+												<option value="5">Radio/TV</option>
+												<option value="6">Repairs</option>
+												<option value="7">Vacation/others</option>
+
+										</select></div>
+							</div><br><br>
+
+							<button type="submit" class="btn btn-primary" value="Predict">Predict</button>
+						</form><br>
+						{% if notice %}
+            <div class="allert alert-danger"><strong>{{notice}}</strong></div>
+            {% endif %}<br><br>
+            <div class="buttons">
+                <a class="button learn-more smoothscroll" href="http://localhost:1911">Login Page</a>
+            </div>
+        </div>
+        <div class="col"></div>
+  
+      </div>
+      
+    </div>
+
+    
+  </header>
+
+  
+
+  <!-- Bootstrap core JavaScript -->
+  <script type=text/javascript src="{{url_for('static', filename="jquery.min.js") }}"></script>
+  <script type=text/javascript src="{{url_for('static', filename="bootstrap.bundle.min.js") }}"></script>
+  
+  <!-- Plugin JavaScript -->
+  <script type=text/javascript src="{{url_for('static', filename="jquery.easing.min.js") }}"></script>
+  
+  <!-- Contact form JavaScript -->
+  <script type=text/javascript src="{{url_for('static', filename="jqBootstrapValidation.js") }}"></script>
+  <script type=text/javascript src="{{url_for('static', filename="contact_me.js") }}"></script>
+  
+  
+
+  <!-- Custom scripts for this template -->
+  
+  <script type=text/javascript src="{{url_for('static', filename="agency.min.js") }}"></script>
+
+
+</body>
+
+</html>
